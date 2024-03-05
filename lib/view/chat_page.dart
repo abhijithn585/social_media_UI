@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:task/data_model/data_model.dart';
-import 'package:task/view/widget/custom_text_field.dart';
+import 'package:task/model/data_model.dart';
 
+// ignore: must_be_immutable
 class ChatPage extends StatefulWidget {
   ChatPage({super.key, required this.data});
   DataModel data;
@@ -16,7 +14,7 @@ class _ChatPageState extends State<ChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Chat',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
@@ -28,27 +26,25 @@ class _ChatPageState extends State<ChatPage> {
           SingleChildScrollView(
             child: Column(
               children: [
-                Container(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Column(
-                      children: [
-                        Container(
-                          height: 100,
-                          width: 100,
-                          child: CircleAvatar(
-                            backgroundImage: AssetImage(widget.data.image!),
-                          ),
+                Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 100,
+                        width: 100,
+                        child: CircleAvatar(
+                          backgroundImage: AssetImage(widget.data.image!),
                         ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "@${widget.data.name!}",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "@${widget.data.name!}",
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ],
                   ),
                 ),
                 Padding(
@@ -62,12 +58,12 @@ class _ChatPageState extends State<ChatPage> {
                             color: Colors.blue),
                         height: 30,
                         width: 50,
-                        child: Padding(
-                          padding: const EdgeInsets.all(4),
+                        child: const Padding(
+                          padding: EdgeInsets.all(4),
                           child: Text("Hii"),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 5,
                       ),
                       CircleAvatar(
@@ -81,10 +77,10 @@ class _ChatPageState extends State<ChatPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      CircleAvatar(
+                      const CircleAvatar(
                         backgroundImage: AssetImage("images/dp.jpg"),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 5,
                       ),
                       Container(
@@ -93,8 +89,8 @@ class _ChatPageState extends State<ChatPage> {
                             color: Colors.grey),
                         height: 30,
                         width: 50,
-                        child: Padding(
-                          padding: const EdgeInsets.all(4),
+                        child: const Padding(
+                          padding: EdgeInsets.all(4),
                           child: Text("helloo"),
                         ),
                       ),
@@ -106,7 +102,7 @@ class _ChatPageState extends State<ChatPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 5,
                       ),
                       Container(
@@ -122,7 +118,7 @@ class _ChatPageState extends State<ChatPage> {
                               fit: BoxFit.cover,
                             )),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       CircleAvatar(
@@ -136,7 +132,7 @@ class _ChatPageState extends State<ChatPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 5,
                       ),
                       Container(
@@ -152,7 +148,7 @@ class _ChatPageState extends State<ChatPage> {
                               fit: BoxFit.cover,
                             )),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       CircleAvatar(
@@ -161,7 +157,7 @@ class _ChatPageState extends State<ChatPage> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 100,
                 ),
               ],
@@ -171,7 +167,7 @@ class _ChatPageState extends State<ChatPage> {
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 10),
-                child: Container(
+                child: SizedBox(
                   width: 330,
                   child: TextFormField(
                     decoration: InputDecoration(
@@ -180,16 +176,16 @@ class _ChatPageState extends State<ChatPage> {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         prefixIcon:
-                            IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+                            IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
                         hintText: "Type here..",
-                        fillColor: Color.fromARGB(255, 236, 236, 236),
+                        fillColor: const Color.fromARGB(255, 236, 236, 236),
                         filled: true,
                         contentPadding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 20)),
                   ),
                 ),
               ),
-              IconButton(onPressed: () {}, icon: Icon(Icons.send))
+              IconButton(onPressed: () {}, icon: const Icon(Icons.send))
             ],
           )
         ],

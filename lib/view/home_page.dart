@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task/view/message_page.dart';
 import 'package:task/view/profile_page.dart';
-import 'package:task/view/profile_page.dart';
 import 'package:task/view/widget/custom_container.dart';
-import 'package:task/view/widget/custom_text_field.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -14,18 +12,16 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Container(
-            child: GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ProfilePage(),
-                    ));
-              },
-              child: const CircleAvatar(
-                backgroundImage: AssetImage("images/dp.jpg"),
-              ),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ProfilePage(),
+                  ));
+            },
+            child: const CircleAvatar(
+              backgroundImage: AssetImage("images/dp.jpg"),
             ),
           ),
         ),
@@ -37,7 +33,7 @@ class HomePage extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MessagePage(),
+                        builder: (context) => const MessagePage(),
                       ));
                 },
                 icon: const Icon(Icons.message)),
@@ -47,7 +43,7 @@ class HomePage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(top: 20, left: 20, right: 20),
+          padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
           child: Column(
             children: [
               CustomContainer(
@@ -58,7 +54,7 @@ class HomePage extends StatelessWidget {
                   shareCount: "94",
                   location: "UK",
                   image: "images/sport.jpg"),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               CustomContainer(

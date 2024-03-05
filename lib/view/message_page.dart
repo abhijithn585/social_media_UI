@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:task/constants/user_list.dart';
@@ -46,8 +45,8 @@ class _MessagePageState extends State<MessagePage>
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.only(top: 20, left: 20),
-        child: Container(
+        padding: const EdgeInsets.only(top: 20, left: 20),
+        child: SizedBox(
           width: 350,
           child: Column(
             children: [
@@ -62,7 +61,7 @@ class _MessagePageState extends State<MessagePage>
                             padding: const EdgeInsets.only(top: 4, bottom: 4),
                             child: Slidable(
                               startActionPane: ActionPane(
-                                  motion: StretchMotion(),
+                                  motion: const StretchMotion(),
                                   children: [
                                     SlidableAction(
                                       onPressed: (context) => _onDissmissed,
@@ -85,10 +84,10 @@ class _MessagePageState extends State<MessagePage>
                                     backgroundImage: AssetImage(message.image!),
                                   ),
                                   title: Text("${message.name}"),
-                                  subtitle: Text("Tap to send message"),
+                                  subtitle: const Text("Tap to send message"),
                                   trailing: IconButton(
                                       onPressed: () {},
-                                      icon: Icon(Icons.camera_alt_rounded)),
+                                      icon: const Icon(Icons.camera_alt_rounded)),
                                 ),
                               ),
                             ),

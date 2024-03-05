@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:task/view/home_page.dart';
 import 'package:task/view/register_page.dart';
 import 'package:task/view/widget/title.dart';
@@ -22,11 +21,11 @@ class _LoginPageState extends State<LoginPage> {
           height: 400,
           width: double.infinity,
           child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              const Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Padding(
-                padding: const EdgeInsets.only(top: 190),
+                padding: EdgeInsets.only(top: 190),
                 child: Padding(
-                    padding: const EdgeInsets.all(8.0), child: TextTitile())),
+                    padding: EdgeInsets.all(8.0), child: TextTitile())),
           ])),
       Align(
           alignment: Alignment.bottomCenter,
@@ -67,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                           Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => HomePage(),
+                                builder: (context) => const HomePage(),
                               ),
                               (route) => false);
                         },
@@ -119,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => RegisterPage()));
+                                  builder: (context) => const RegisterPage()));
                         })
                   ])))
     ]));

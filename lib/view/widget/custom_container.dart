@@ -21,72 +21,70 @@ class CustomContainer extends StatelessWidget {
   String profileImage;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Row(
-            children: [
-              CircleAvatar(
-                backgroundImage: AssetImage(profileImage),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Column(
-                  children: [
-                    Text(
-                      username,
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      location,
-                      style: const TextStyle(fontSize: 12),
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: SizedBox(
-              height: 300,
-              width: 300,
-              child: Image.asset(
-                image,
-                fit: BoxFit.cover,
-              ),
+    return Column(
+      children: [
+        Row(
+          children: [
+            CircleAvatar(
+              backgroundImage: AssetImage(profileImage),
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Column(
                 children: [
-                  IconButton(
-                      onPressed: () {}, icon: const Icon(Icons.favorite_border)),
-                  Text(likeCount)
-                ],
-              ),
-              Row(
-                children: [
-                  IconButton(
-                      onPressed: () {}, icon: const Icon(Icons.comment_outlined)),
                   Text(
-                    commentCount,
+                    username,
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    location,
+                    style: const TextStyle(fontSize: 12),
                   )
                 ],
               ),
-              Row(
-                children: [
-                  IconButton(onPressed: () {}, icon: const Icon(Icons.send)),
-                  Text(shareCount)
-                ],
-              ),
-            ],
+            ),
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 20),
+          child: SizedBox(
+            height: 300,
+            width: 300,
+            child: Image.asset(
+              image,
+              fit: BoxFit.cover,
+            ),
           ),
-          CustomTextField(hintText: "Add comment..")
-        ],
-      ),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                IconButton(
+                    onPressed: () {}, icon: const Icon(Icons.favorite_border)),
+                Text(likeCount)
+              ],
+            ),
+            Row(
+              children: [
+                IconButton(
+                    onPressed: () {}, icon: const Icon(Icons.comment_outlined)),
+                Text(
+                  commentCount,
+                )
+              ],
+            ),
+            Row(
+              children: [
+                IconButton(onPressed: () {}, icon: const Icon(Icons.send)),
+                Text(shareCount)
+              ],
+            ),
+          ],
+        ),
+        const CustomTextField(hintText: "Add comment..")
+      ],
     );
   }
 }

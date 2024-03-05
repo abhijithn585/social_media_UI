@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TextFieldCustom extends StatelessWidget {
@@ -8,18 +7,18 @@ class TextFieldCustom extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 20, bottom: 10),
-      child: Container(
+      child: SizedBox(
           width: 300,
           child: TextFormField(
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
                 borderSide:
-                    BorderSide(color: Color.fromARGB(255, 201, 150, 73)),
+                    const BorderSide(color: Color.fromARGB(255, 201, 150, 73)),
                 borderRadius: BorderRadius.circular(30),
               ),
               enabledBorder: OutlineInputBorder(
                 borderSide:
-                    BorderSide(color: Color.fromARGB(255, 201, 150, 73)),
+                    const BorderSide(color: Color.fromARGB(255, 201, 150, 73)),
                 borderRadius: BorderRadius.circular(30),
               ),
               fillColor: Colors.white,

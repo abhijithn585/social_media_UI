@@ -1,4 +1,4 @@
-import 'package:task/data_model/data_model.dart';
+import 'package:task/model/data_model.dart';
 
 List<DataModel> user = [
   DataModel(

@@ -2,11 +2,10 @@
 
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:task/view/home_page.dart';
 import 'package:task/view/login_page.dart';
 
 class InitialPage extends StatefulWidget {
-  const InitialPage({Key? key}) : super(key: key);
+  const InitialPage({super.key});
 
   @override
   _InitialPageState createState() => _InitialPageState();
@@ -43,14 +42,13 @@ class _InitialPageState extends State<InitialPage>
         opacityValue = (bottomPosition - 800) / 1200;
         opacityValue = opacityValue.clamp(0.0, 0.0);
         if (bottomPosition == 2000.0) {
-          // Navigate to the next page
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(
               builder: (context) =>
-                  LoginPage(), // Replace with your desired next page
+                  const LoginPage(), 
             ),
           );
-          timer.cancel(); // Stop the timer
+          timer.cancel(); 
         }
       });
     });

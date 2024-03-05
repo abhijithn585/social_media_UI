@@ -22,19 +22,19 @@ class RegisterPage extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            CustomTextField(hintText: 'Username'),
+            const CustomTextField(hintText: 'Username'),
             const SizedBox(
               height: 20,
             ),
-            CustomTextField(hintText: 'Email'),
+            const CustomTextField(hintText: 'Email'),
             const SizedBox(
               height: 20,
             ),
-            CustomTextField(hintText: 'Password'),
+            const CustomTextField(hintText: 'Password'),
             const SizedBox(
               height: 20,
             ),
-            CustomTextField(hintText: 'Confirm password'),
+            const CustomTextField(hintText: 'Confirm password'),
             const SizedBox(
               height: 20,
             ),
